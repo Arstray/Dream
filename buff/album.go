@@ -80,7 +80,7 @@ var (
 	SportsPower = NewAlbum(0, 0, 20, nil)
 
 	//改革开放
-	reformOpen = NewAlbum(20, 0, 0, nil)
+	ReformOpen = NewAlbum(20, 0, 0, nil)
 	//中国制造
 	MadeInChina = NewAlbum(0, 0, 0, classBuff{building.Industry: 60})
 	//减贫奇迹
@@ -95,6 +95,15 @@ var (
 
 // 区域级相册组
 var (
+	Chinese = NewAlbum(
+		60, 40, 40,
+		classBuff{
+			building.Residence: 60,
+			building.Business:  60,
+			building.Industry:  60,
+		},
+	)
+
 	// 黑龙江
 	// 吉林
 	// 辽宁

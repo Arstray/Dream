@@ -24,23 +24,22 @@ func TestNewGroupEmpty(t *testing.T) {
 }
 func TestNewGroup(t *testing.T) {
 	g := NewGroup([9]building.Building{
-		building.NewWoodenHouse(5),
-		building.NewWoodFactory(5),
-		building.NewGardenHouse(3),
-		building.NewStudioApartment(5),
+
+		building.NewTextileMill(4),
+		building.NewVilla(3),
+		building.NewTalentApartment(4),
+		building.NewChineseSmallHouse(4),
 		building.NewFolkFood(3),
-		building.NewBusinessCentre(4),
-		building.NewMediaVoice(2),
-		building.NewPenguinMachinery(2),
-		building.NewPetroleum(2),
+
+		building.NewBookCity(4),
+		building.NewSchool(5),
+		building.NewPowerPlant(5),
+		building.NewPaperMill(5),
 	})
 	// 设置已经完成的相册(预设)
 	g.SetAlbum(buff.RiversAndLakes)
 	g.SetAlbum(buff.ThreeEastern)
-	g.SetAlbum(buff.OneBeltOneRoad)
-	g.SetAlbum(buff.SportsPower)
-	g.SetAlbum(buff.MilitaryPower)
-	g.SetAlbum(buff.OneCountryTwoSystems)
+	g.SetAlbum(buff.Chinese)
 	// 设置已经完成的相册(单个)
 
 	// 设置完成的政策组(预设)
@@ -53,7 +52,7 @@ func TestNewGroup(t *testing.T) {
 	// 设置家国之光，家园之光活动buff(属于政策)
 	g.SetProfit(buff.NewPolicy(90, 100, 100, nil))
 	// 设置正在进行的城市任务
-
+	g.SetCity(buff.NewCity(0, 0, 0, nil, buff.NewFetterBuff(building.BookCity, 150).Add(building.School, 150)))
 	// 显示目前搭配倍率
 	g.Profit()
 }
