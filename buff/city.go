@@ -14,6 +14,7 @@ type City struct {
 	classBuff
 	fetterBuff
 }
+
 // NewCity 新建城市任务
 func NewCity(gB, onB, offB int, cB classBuff, tB fetterBuff) *City {
 	return &City{
@@ -40,6 +41,7 @@ func (c *City) OnBuff(b building.Building) float64 {
 
 	return float64(res) / 100
 }
+
 // OffBuff 离线城市任务加成
 func (c *City) OffBuff(b building.Building) float64 {
 	// 基础倍率
@@ -55,13 +57,20 @@ func (c *City) OffBuff(b building.Building) float64 {
 
 	return float64(res) / 100
 }
+
 // Composition 加成叠加
 func (c *City) Composition(newCity *City) {
 	c.globalBuff += newCity.globalBuff
 	c.onlineBuff += newCity.onlineBuff
 	c.offlineBuff += newCity.offlineBuff
+	if c.classBuff == nil {
+		c.classBuff = make(map[building.Class]int)
+	}
 	for k, v := range newCity.classBuff {
 		c.classBuff[k] += v
+	}
+	if c.fetterBuff == nil {
+		c.fetterBuff = make(map[building.Type]int)
 	}
 	for k, v := range newCity.fetterBuff {
 		c.fetterBuff[k] += v
