@@ -2,7 +2,6 @@ package buff
 
 import "dream/building"
 
-
 type (
 	// 全局buff
 	globalBuff int
@@ -24,6 +23,7 @@ func (v onlineBuff) Value() int { return int(v) }
 
 func (v offlineBuff) Value() int { return int(v) }
 
+// NewClassBuff 建筑分类buff
 func NewClassBuff(key building.Class, value int) classBuff {
 	return map[building.Class]int{
 		key: value,
@@ -46,12 +46,12 @@ func (c classBuff) Add(key building.Class, value int) classBuff {
 	return c
 }
 
+// NewFetterBuff 建筑类型buff
 func NewFetterBuff(key building.Type, value int) fetterBuff {
 	return map[building.Type]int{
 		key: value,
 	}
 }
-
 func (b fetterBuff) Value(buildingType building.Type) int {
 	if v, ok := b[buildingType]; ok {
 		return v

@@ -4,8 +4,10 @@ import (
 	"dream/building"
 )
 
+// Policy 政策
 // 政策预设信息来自游戏
 // 政策加成是不单调增长的，但更换建筑会重新构建组，所以加成是重新累加计算的
+// 家园之光Buff属于政策加成
 type Policy struct {
 	globalBuff
 	onlineBuff
@@ -22,7 +24,7 @@ func NewPolicy(gB, onB, offB int, cB classBuff) *Policy {
 	}
 }
 
-// OnBuff 政策加成
+// OnBuff 在线政策加成
 func (p *Policy) OnBuff(b building.Building) float64 {
 	// 基础倍率
 	var res = 100
@@ -36,7 +38,7 @@ func (p *Policy) OnBuff(b building.Building) float64 {
 	return float64(res) / 100
 }
 
-// OffBuff 政策加成
+// OffBuff 离线政策加成
 func (p *Policy) OffBuff(b building.Building) float64 {
 	// 基础倍率
 	var res = 100
@@ -49,7 +51,7 @@ func (p *Policy) OffBuff(b building.Building) float64 {
 
 	return float64(res) / 100
 }
-
+// Composition 加成叠加
 func (p *Policy) Composition(newPolicy *Policy) {
 	p.globalBuff += newPolicy.globalBuff
 	p.onlineBuff += newPolicy.onlineBuff
@@ -77,4 +79,5 @@ var (
 			building.Industry: 600,
 		},
 	)
+	// 由于还完全未解锁第三阶段，不能给出整体预设
 )

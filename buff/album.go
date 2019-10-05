@@ -4,6 +4,7 @@ import (
 	"dream/building"
 )
 
+// Album 相册
 // 相册预设信息来源:http://www.paopaoche.net/sj/164396.html
 // 相册加成是单调增长的，已经获得的加成则不会消失
 // 翻译于百度......
@@ -23,7 +24,7 @@ func NewAlbum(gB, onB, offB int, cB classBuff) *Album {
 	}
 }
 
-// AlbumBuff 相册加成
+// OnBuff 在线相册加成
 func (a *Album) OnBuff(b building.Building) float64 {
 	// 基础倍率
 	var res = 100
@@ -37,7 +38,7 @@ func (a *Album) OnBuff(b building.Building) float64 {
 	return float64(res) / 100
 }
 
-// AlbumBuff 相册加成
+// OffBuff 离线相册加成
 func (a *Album) OffBuff(b building.Building) float64 {
 	// 基础倍率
 	var res = 100
@@ -51,6 +52,7 @@ func (a *Album) OffBuff(b building.Building) float64 {
 	return float64(res) / 100
 }
 
+// Composition 加成叠加
 func (a *Album) Composition(newAlbum *Album) {
 	a.globalBuff += newAlbum.globalBuff
 	a.onlineBuff += newAlbum.onlineBuff

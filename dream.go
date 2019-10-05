@@ -7,6 +7,7 @@ import (
 )
 
 // Group 实际使用的建筑组合
+// 通过与四类加成组合，计算当前倍率
 type Group struct {
 	buildings [9]building.Building
 	album     *buff.Album
@@ -44,6 +45,7 @@ func (g Group) Profit() {
 	}
 }
 
+// NewGroup 新建一个建筑组合
 func NewGroup(buildings [9]building.Building) Group {
 	fetters := buff.NewFetterBuffs()
 	for _, building := range buildings {
@@ -59,18 +61,22 @@ func NewGroup(buildings [9]building.Building) Group {
 	}
 }
 
+// SetProfit 设置政策或活动
 func (g Group) SetProfit(policy *buff.Policy) {
 	g.policy.Composition(policy)
 }
 
+// SetCity 设置城市任务
 func (g Group) SetCity(city *buff.City) {
 	g.city.Composition(city)
 }
 
+// SetAlbum 设置相册
 func (g Group) SetAlbum(album *buff.Album) {
 	g.album.Composition(album)
 }
 
+// BaseGrowUp 基准升级
 func BaseGrowUp(base float64, star int) float64 {
 	var res = base
 	for i := 1; i <= star; i++ {

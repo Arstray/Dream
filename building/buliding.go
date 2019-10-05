@@ -6,7 +6,7 @@ type Building struct {
 	Base  float64
 	Type  Type
 	Class Class
-	Star Star
+	Star  Star
 }
 
 // Class 建筑类别(商业,住宅,工业)
@@ -130,7 +130,7 @@ func NewWoodenHouse(star Star) Building {
 		Base:  1,
 		Class: Residence,
 		Type:  WoodenHouse,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewSteelStructure(star Star) Building {
@@ -139,7 +139,7 @@ func NewSteelStructure(star Star) Building {
 		Base:  1,
 		Class: Residence,
 		Type:  SteelStructure,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewBungalow(star Star) Building {
@@ -148,7 +148,7 @@ func NewBungalow(star Star) Building {
 		Base:  1.1,
 		Class: Residence,
 		Type:  Bungalow,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewStudioApartment(star Star) Building {
@@ -157,7 +157,7 @@ func NewStudioApartment(star Star) Building {
 		Base:  1.18,
 		Class: Residence,
 		Type:  StudioApartment,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewResidentialBuilding(star Star) Building {
@@ -166,7 +166,7 @@ func NewResidentialBuilding(star Star) Building {
 		Base:  1,
 		Class: Residence,
 		Type:  ResidentialBuilding,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewTalentApartment(star Star) Building {
@@ -175,7 +175,7 @@ func NewTalentApartment(star Star) Building {
 		Base:  1.4,
 		Class: Residence,
 		Type:  TalentApartment,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewGardenHouse(star Star) Building {
@@ -184,7 +184,7 @@ func NewGardenHouse(star Star) Building {
 		Base:  1.022,
 		Class: Residence,
 		Type:  GardenHouse,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewChineseSmallHouse(star Star) Building {
@@ -193,7 +193,7 @@ func NewChineseSmallHouse(star Star) Building {
 		Base:  1.4,
 		Class: Residence,
 		Type:  ChineseSmallHouse,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewVilla(star Star) Building {
@@ -202,7 +202,7 @@ func NewVilla(star Star) Building {
 		Base:  1.52,
 		Class: Residence,
 		Type:  Villa,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewRenaissanceMansion(star Star) Building {
@@ -211,7 +211,7 @@ func NewRenaissanceMansion(star Star) Building {
 		Base:  1.672,
 		Class: Residence,
 		Type:  RenaissanceMansion,
-		Star: star,
+		Star:  star,
 	}
 }
 
@@ -222,7 +222,7 @@ func NewConvenienceStore(star Star) Building {
 		Base:  1,
 		Class: Business,
 		Type:  ConvenienceStore,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewSchool(star Star) Building {
@@ -231,7 +231,7 @@ func NewSchool(star Star) Building {
 		Base:  1,
 		Class: Business,
 		Type:  School,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewCouture(star Star) Building {
@@ -240,7 +240,7 @@ func NewCouture(star Star) Building {
 		Base:  1,
 		Class: Business,
 		Type:  Couture,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewHardwareStore(star Star) Building {
@@ -249,7 +249,7 @@ func NewHardwareStore(star Star) Building {
 		Base:  1,
 		Class: Business,
 		Type:  HardwareStore,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewFoodMarket(star Star) Building {
@@ -258,7 +258,7 @@ func NewFoodMarket(star Star) Building {
 		Base:  1,
 		Class: Business,
 		Type:  FoodMarket,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewBookCity(star Star) Building {
@@ -267,7 +267,7 @@ func NewBookCity(star Star) Building {
 		Base:  1,
 		Class: Business,
 		Type:  BookCity,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewBusinessCentre(star Star) Building {
@@ -276,7 +276,7 @@ func NewBusinessCentre(star Star) Building {
 		Base:  1.022,
 		Class: Business,
 		Type:  BusinessCentre,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewGasStation(star Star) Building {
@@ -285,7 +285,7 @@ func NewGasStation(star Star) Building {
 		Base:  1.204,
 		Class: Business,
 		Type:  GasStation,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewFolkFood(star Star) Building {
@@ -294,7 +294,7 @@ func NewFolkFood(star Star) Building {
 		Base:  1.52,
 		Class: Business,
 		Type:  FolkFood,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewMediaVoice(star Star) Building {
@@ -303,7 +303,7 @@ func NewMediaVoice(star Star) Building {
 		Base:  1.615,
 		Class: Business,
 		Type:  MediaVoice,
-		Star: star,
+		Star:  star,
 	}
 }
 
@@ -314,7 +314,7 @@ func NewWoodFactory(star Star) Building {
 		Base:  1,
 		Class: Industry,
 		Type:  WoodFactory,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewPaperMill(star Star) Building {
@@ -323,7 +323,7 @@ func NewPaperMill(star Star) Building {
 		Base:  1,
 		Class: Industry,
 		Type:  PaperMill,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewWaterworks(star Star) Building {
@@ -332,7 +332,7 @@ func NewWaterworks(star Star) Building {
 		Base:  1.26,
 		Class: Industry,
 		Type:  Waterworks,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewPowerPlant(star Star) Building {
@@ -341,7 +341,7 @@ func NewPowerPlant(star Star) Building {
 		Base:  1.18,
 		Class: Industry,
 		Type:  PowerPlant,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewFoodManufacturer(star Star) Building {
@@ -350,7 +350,7 @@ func NewFoodManufacturer(star Star) Building {
 		Base:  1,
 		Class: Industry,
 		Type:  FoodManufacturer,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewIronworks(star Star) Building {
@@ -359,7 +359,7 @@ func NewIronworks(star Star) Building {
 		Base:  1,
 		Class: Industry,
 		Type:  Ironworks,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewTextileMill(star Star) Building {
@@ -368,7 +368,7 @@ func NewTextileMill(star Star) Building {
 		Base:  1,
 		Class: Industry,
 		Type:  TextileMill,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewSparePartsFactory(star Star) Building {
@@ -377,7 +377,7 @@ func NewSparePartsFactory(star Star) Building {
 		Base:  1,
 		Class: Industry,
 		Type:  SparePartsFactory,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewPenguinMachinery(star Star) Building {
@@ -386,7 +386,7 @@ func NewPenguinMachinery(star Star) Building {
 		Base:  1.33,
 		Class: Industry,
 		Type:  PenguinMachinery,
-		Star: star,
+		Star:  star,
 	}
 }
 func NewPetroleum(star Star) Building {
@@ -395,6 +395,6 @@ func NewPetroleum(star Star) Building {
 		Base:  1,
 		Class: Industry,
 		Type:  Petroleum,
-		Star: star,
+		Star:  star,
 	}
 }

@@ -2,6 +2,7 @@ package buff
 
 import "dream/building"
 
+// Fetters 关联(羁绊)
 // 关联预设信息来自游戏
 // 关联加成是不单调增长的，但更换建筑会重新构建组，所以加成是重新累加计算的
 type Fetters struct {
@@ -21,7 +22,7 @@ func NewFetterBuffs() *Fetters {
 		fetterBuff:  make(map[building.Type]int),
 	}
 }
-// OnBuff 在线政策加成
+// OnBuff 在线关联加成
 func (f *Fetters) OnBuff(b building.Building) float64 {
 	// 基础倍率
 	var res = 100
@@ -36,7 +37,7 @@ func (f *Fetters) OnBuff(b building.Building) float64 {
 
 	return float64(res) / 100
 }
-
+// OffBuff 离线关联加成
 func (f *Fetters) OffBuff(b building.Building) float64 {
 	// 基础倍率
 	var res = 100

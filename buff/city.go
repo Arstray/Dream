@@ -4,6 +4,7 @@ import (
 	"dream/building"
 )
 
+// City 城市任务
 // 由于城市任务不唯一，故不作预设封装
 // 城市任务加成是不单调增长的，但更换建筑会重新构建组，所以加成是重新累加计算的
 type City struct {
@@ -13,7 +14,7 @@ type City struct {
 	classBuff
 	fetterBuff
 }
-
+// NewCity 新建城市任务
 func NewCity(gB, onB, offB int, cB classBuff, tB fetterBuff) *City {
 	return &City{
 		globalBuff:  globalBuff(gB),
@@ -39,7 +40,7 @@ func (c *City) OnBuff(b building.Building) float64 {
 
 	return float64(res) / 100
 }
-
+// OffBuff 离线城市任务加成
 func (c *City) OffBuff(b building.Building) float64 {
 	// 基础倍率
 	var res = 100
@@ -54,7 +55,7 @@ func (c *City) OffBuff(b building.Building) float64 {
 
 	return float64(res) / 100
 }
-
+// Composition 加成叠加
 func (c *City) Composition(newCity *City) {
 	c.globalBuff += newCity.globalBuff
 	c.onlineBuff += newCity.onlineBuff
