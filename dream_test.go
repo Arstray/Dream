@@ -3,24 +3,8 @@ package dream
 import (
 	"dream/buff"
 	"dream/building"
-	"fmt"
 	"testing"
 )
-
-// 800级木屋 无加成收益392B （3.92e11）
-
-func TestBuilding_Up(t *testing.T) {
-	// 1 2 3 4 5 6 7 8 9 11
-	// 从10:11开始算
-	x := float64(11)
-	sum := float64(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9)
-	for i := 10; i < 90; i++ {
-
-		sum += 10 * x
-		fmt.Printf("第%d0级增幅收益为%.2e \n1*收益:%.2e 2*收益:%.2e 3*收益:%.2e 4*收益:%.2e 5*收益:%.2e \n", i, x, sum, sum*2, sum*6, sum*24, sum*120)
-		x *= 1.25
-	}
-}
 
 func TestNewGroupEmpty(t *testing.T) {
 	g := NewGroup([9]building.Building{
