@@ -21,19 +21,20 @@ type Group struct {
 // 离线时，失去所有在线加成，获得所有离线加成，最终结果*0.5
 func (g Group) Profit() {
 	fmt.Println("在线情况")
-	fmt.Printf("建筑名称 \t 星级 \t 关联 \t 相册 \t 政策 \t 城市任务 \t 外界倍率 \t 自身倍率 \t 相对生产值 \n")
+	fmt.Printf("建筑名称 \t 品级 \t 星级 \t 关联 \t 相册 \t 政策 \t 城市任务 \t 外界倍率 \t 自身倍率 \t 相对生产值 \n")
 	for _, b := range g.buildings {
 		fmt.Printf(
-			"%s \t %d \t\t %.2f \t %.2f \t %.2f \t %.2f \t\t %6.2f \t %6.2f \t %.2f \n",
-			b.Name, b.Star.Value(), g.fetters.OnBuff(b), g.album.OnBuff(b), g.policy.OnBuff(b), g.city.OnBuff(b),
+			"%s \t %s \t %d \t\t %.2f \t %.2f \t %.2f \t %.2f \t\t %6.2f \t %6.2f \t %.2f \n",
+			b.Name, b.Rarity.Value(), b.Star.Value(), g.fetters.OnBuff(b), g.album.OnBuff(b), g.policy.OnBuff(b), g.city.OnBuff(b),
 			g.fetters.OnBuff(b)*g.album.OnBuff(b)*g.policy.OnBuff(b)*g.city.OnBuff(b),
 			BaseGrowUp(b.Base, b.Star.Value()),
 			g.fetters.OnBuff(b)*g.album.OnBuff(b)*g.policy.OnBuff(b)*g.city.OnBuff(b)*BaseGrowUp(b.Base, b.Star.Value()),
 		)
 	}
+	fmt.Println("========================================================================================================")
 
 	fmt.Println("离线情况")
-	fmt.Printf("名称 \t\t 星级 \t 关联 \t 相册 \t 政策 \t 城市任务 \t 外界倍率 \t 自身倍率 \t 相对生产值 \n")
+	fmt.Printf("建筑名称 \t 星级 \t 关联 \t 相册 \t 政策 \t 城市任务 \t 外界倍率 \t 自身倍率 \t 相对生产值 \n")
 	for _, b := range g.buildings {
 		fmt.Printf(
 			"%s \t %d \t\t %.2f \t %.2f \t %.2f \t %.2f \t\t %6.2f \t %6.2f \t %.2f \n",

@@ -2,11 +2,12 @@ package building
 
 // Building 建筑实体
 type Building struct {
-	Name  string
-	Base  float64
-	Type  Type
-	Class Class
-	Star  Star
+	Name   string
+	Base   float64
+	Rarity Rarity
+	Type   Type
+	Class  Class
+	Star   Star
 }
 
 // Class 建筑类别(商业,住宅,工业)
@@ -15,12 +16,28 @@ type Class int
 // Type 建筑类型
 type Type int
 
+// Rarity 稀有度
+type Rarity string
+
 // Star 建筑星级
 type Star int
 
 func (s Star) Value() int {
 	return int(s)
 }
+
+func (r Rarity) Value() string {
+	return string(r)
+}
+
+const (
+	// Common 普通
+	Common Rarity = "普通"
+	// Rare 稀有
+	Rare Rarity = "稀有"
+	// Epic 史诗
+	Epic Rarity = "史诗"
+)
 
 const (
 	// Residence 住宅
@@ -122,279 +139,3 @@ const (
 	// 人民石油
 	Petroleum
 )
-
-// Residence
-func NewWoodenHouse(star Star) Building {
-	return Building{
-		Name:  "木质小屋",
-		Base:  1,
-		Class: Residence,
-		Type:  WoodenHouse,
-		Star:  star,
-	}
-}
-func NewSteelStructure(star Star) Building {
-	return Building{
-		Name:  "钢结构房",
-		Base:  1,
-		Class: Residence,
-		Type:  SteelStructure,
-		Star:  star,
-	}
-}
-func NewBungalow(star Star) Building {
-	return Building{
-		Name:  "平凡住房",
-		Base:  1.1,
-		Class: Residence,
-		Type:  Bungalow,
-		Star:  star,
-	}
-}
-func NewStudioApartment(star Star) Building {
-	return Building{
-		Name:  "小型公寓",
-		Base:  1.18,
-		Class: Residence,
-		Type:  StudioApartment,
-		Star:  star,
-	}
-}
-func NewResidentialBuilding(star Star) Building {
-	return Building{
-		Name:  "居民大楼",
-		Base:  1,
-		Class: Residence,
-		Type:  ResidentialBuilding,
-		Star:  star,
-	}
-}
-func NewTalentApartment(star Star) Building {
-	return Building{
-		Name:  "人才公寓",
-		Base:  1.4,
-		Class: Residence,
-		Type:  TalentApartment,
-		Star:  star,
-	}
-}
-func NewGardenHouse(star Star) Building {
-	return Building{
-		Name:  "花园洋房",
-		Base:  1.022,
-		Class: Residence,
-		Type:  GardenHouse,
-		Star:  star,
-	}
-}
-func NewChineseSmallHouse(star Star) Building {
-	return Building{
-		Name:  "中式小楼",
-		Base:  1.4,
-		Class: Residence,
-		Type:  ChineseSmallHouse,
-		Star:  star,
-	}
-}
-func NewVilla(star Star) Building {
-	return Building{
-		Name:  "空中别墅",
-		Base:  1.52,
-		Class: Residence,
-		Type:  Villa,
-		Star:  star,
-	}
-}
-func NewRenaissanceMansion(star Star) Building {
-	return Building{
-		Name:  "复兴公馆",
-		Base:  1.672,
-		Class: Residence,
-		Type:  RenaissanceMansion,
-		Star:  star,
-	}
-}
-
-// Business
-func NewConvenienceStore(star Star) Building {
-	return Building{
-		Name:  "便利之店",
-		Base:  1,
-		Class: Business,
-		Type:  ConvenienceStore,
-		Star:  star,
-	}
-}
-func NewSchool(star Star) Building {
-	return Building{
-		Name:  "清华大学",
-		Base:  1,
-		Class: Business,
-		Type:  School,
-		Star:  star,
-	}
-}
-func NewCouture(star Star) Building {
-	return Building{
-		Name:  "服装之店",
-		Base:  1,
-		Class: Business,
-		Type:  Couture,
-		Star:  star,
-	}
-}
-func NewHardwareStore(star Star) Building {
-	return Building{
-		Name:  "五金之店",
-		Base:  1,
-		Class: Business,
-		Type:  HardwareStore,
-		Star:  star,
-	}
-}
-func NewFoodMarket(star Star) Building {
-	return Building{
-		Name:  "菜市之场",
-		Base:  1,
-		Class: Business,
-		Type:  FoodMarket,
-		Star:  star,
-	}
-}
-func NewBookCity(star Star) Building {
-	return Building{
-		Name:  "图书之城",
-		Base:  1,
-		Class: Business,
-		Type:  BookCity,
-		Star:  star,
-	}
-}
-func NewBusinessCentre(star Star) Building {
-	return Building{
-		Name:  "商贸中心",
-		Base:  1.022,
-		Class: Business,
-		Type:  BusinessCentre,
-		Star:  star,
-	}
-}
-func NewGasStation(star Star) Building {
-	return Building{
-		Name:  "加油之站",
-		Base:  1.204,
-		Class: Business,
-		Type:  GasStation,
-		Star:  star,
-	}
-}
-func NewFolkFood(star Star) Building {
-	return Building{
-		Name:  "民食之斋",
-		Base:  1.52,
-		Class: Business,
-		Type:  FolkFood,
-		Star:  star,
-	}
-}
-func NewMediaVoice(star Star) Building {
-	return Building{
-		Name:  "媒体之声",
-		Base:  1.615,
-		Class: Business,
-		Type:  MediaVoice,
-		Star:  star,
-	}
-}
-
-// Industry
-func NewWoodFactory(star Star) Building {
-	return Building{
-		Name:  "木材工厂",
-		Base:  1,
-		Class: Industry,
-		Type:  WoodFactory,
-		Star:  star,
-	}
-}
-func NewPaperMill(star Star) Building {
-	return Building{
-		Name:  "造纸工厂",
-		Base:  1,
-		Class: Industry,
-		Type:  PaperMill,
-		Star:  star,
-	}
-}
-func NewWaterworks(star Star) Building {
-	return Building{
-		Name:  "水力工厂",
-		Base:  1.26,
-		Class: Industry,
-		Type:  Waterworks,
-		Star:  star,
-	}
-}
-func NewPowerPlant(star Star) Building {
-	return Building{
-		Name:  "电力工厂",
-		Base:  1.18,
-		Class: Industry,
-		Type:  PowerPlant,
-		Star:  star,
-	}
-}
-func NewFoodManufacturer(star Star) Building {
-	return Building{
-		Name:  "食品工厂",
-		Base:  1,
-		Class: Industry,
-		Type:  FoodManufacturer,
-		Star:  star,
-	}
-}
-func NewIronworks(star Star) Building {
-	return Building{
-		Name:  "钢铁工厂",
-		Base:  1,
-		Class: Industry,
-		Type:  Ironworks,
-		Star:  star,
-	}
-}
-func NewTextileMill(star Star) Building {
-	return Building{
-		Name:  "纺织工厂",
-		Base:  1,
-		Class: Industry,
-		Type:  TextileMill,
-		Star:  star,
-	}
-}
-func NewSparePartsFactory(star Star) Building {
-	return Building{
-		Name:  "零件工厂",
-		Base:  1,
-		Class: Industry,
-		Type:  SparePartsFactory,
-		Star:  star,
-	}
-}
-func NewPenguinMachinery(star Star) Building {
-	return Building{
-		Name:  "企鹅机械",
-		Base:  1.33,
-		Class: Industry,
-		Type:  PenguinMachinery,
-		Star:  star,
-	}
-}
-func NewPetroleum(star Star) Building {
-	return Building{
-		Name:  "人民石油",
-		Base:  1,
-		Class: Industry,
-		Type:  Petroleum,
-		Star:  star,
-	}
-}
